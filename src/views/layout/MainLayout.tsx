@@ -4,9 +4,9 @@ import { Footer } from "../components/Footer";
 
 export function MainLayout() {
 	return (
-		<div className="flex flex-col h-screen dark:bg-bio dark:text-bio-contraste font-roboto overflow-auto">
+		<div className="flex flex-col h-screen bg-bio text-bio-contraste font-roboto overflow-auto">
 			<Header />
-			<main className="flex-grow dark:bg-bio py-4 px-14">
+			<main className="flex-grow md:py-4 lg:px-14 md:px-4">
 				<Outlet />
 			</main>
 			<Footer />

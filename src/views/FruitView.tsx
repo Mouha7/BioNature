@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { BtnLightCustom } from "./components/BtnCustom";
 import { CarouselSize } from "./components/CarouselSize";
+import { FruitQualityText } from "@/constants/Fruits";
 
 const fruits = [
 	{
@@ -27,14 +28,14 @@ const fruits = [
 
 export function FruitView() {
 	return (
-		<div className="flex flex-col w-full">
-			<div className="fully-style bg-[url('/assets/bg-fruits.jpg')] bg-cover bg-center bg-no-repeat h-[570px] shadow-lg">
-				<div className="flex flex-col justify-center items-center h-full dark:bg-black/50 text-white p-5">
-					<div className="w-2xl flex flex-col justify-center items-center gap-5">
-						<h1 className="text-4xl font-black uppercase text-center">
-							BIONATURE, ça vient du cœur. Merci les fruits.
+		<div className="flex flex-col w-full justify-center items-center">
+			<div className="lg-fully-style fully-style bg-cover bg-center bg-[url('/assets/bg-fruits.jpg')] bg-no-repeat md:h-[570px] h-[400px] md:w-7xl shadow-lg">
+				<div className="flex flex-col justify-center items-center h-full bg-black/50 text-white p-5">
+					<div className="lg:w-2xl flex flex-col lg:justify-center lg:mx-0 mx-4 lg:items-center gap-5">
+						<h1 className="md:text-4xl font-black text-2xl text-center">
+							BIONATURE, ça vient du cœur.<br/> Merci les fruits.
 						</h1>
-						<p className="text-center">
+						<p className="lg:text-center lg:w-[766px]">
 							Source de vie, de plaisir et de bien-être, les
 							fruits tropicaux occupent une place essentielle dans
 							notre alimentation… et dans nos engagements. Chez
@@ -43,7 +44,7 @@ export function FruitView() {
 						</p>
 						<BtnLightCustom
 							to="/catalogue/gamme-jus"
-							className="uppercase"
+							className=""
 							text="Découvrez notre gamme"
 						/>
 					</div>
@@ -51,7 +52,7 @@ export function FruitView() {
 			</div>
 
 			<div className="flex flex-col justify-center items-center gap-5 my-7">
-				<div className="w-5xl mx-16 flex flex-col justify-center items-center gap-5">
+				<div className="lg:w-5xl lg:mx-16 mx-4 flex flex-col justify-center items-center gap-5">
 					<h2 className="text-3xl font-bold uppercase text-center">
 						Nos fruits
 					</h2>
@@ -63,12 +64,12 @@ export function FruitView() {
 					</p>
 				</div>
 
-				<div className="w-7xl flex flex-wrap gap-16">
+				<div className="lg:w-7xl flex flex-wrap md:justify-start justify-center lg:gap-16 gap-4">
 					{fruits.map((fruit) => (
 						<NavLink
 							to={`/fruits/${fruit.name}`}
 							key={fruit.name}
-							className="w-96 flex flex-col items-center gap-5"
+							className="lg:w-96 w-1/2 flex flex-col items-center gap-5"
 						>
 							<img
 								src={fruit.image}
@@ -84,14 +85,14 @@ export function FruitView() {
 				</div>
 			</div>
 
-			<div className="flex flex-col justify-center items-center gap-5 my-7">
-				<div className="mx-16 flex flex-col justify-center items-center gap-12">
+			<div className="flex flex-col justify-center items-center gap-5 my-7 lg:mx-16 mx-4">
+				<div className="flex flex-col justify-center items-center gap-12">
 					<h2 className="text-3xl font-bold uppercase text-center">
-						Les fruits Materne, c'est
+						Les fruits BioNature, c'est
 					</h2>
-					<div className="flex justify-center gap-12">
+					<div className="flex justify-center lg:flex-nowrap flex-wrap lg:gap-12 gap-5">
 						<div className="flex justify-between">
-							<div className="w-96 flex flex-col items-center gap-5">
+							<div className="md:w-96 flex flex-col items-center gap-5">
 								<img
 									className="w-44 h-44 rounded-full object-cover "
 									src="/assets/bg-fraise.webp"
@@ -109,7 +110,7 @@ export function FruitView() {
 							</div>
 						</div>
 						<div className="flex justify-between">
-							<div className="w-96 flex flex-col items-center gap-5">
+							<div className="md:w-96 flex flex-col items-center gap-5">
 								<img
 									className="w-44 h-44 rounded-full object-cover "
 									src="/assets/bg-fraise.webp"
@@ -126,7 +127,7 @@ export function FruitView() {
 							</div>
 						</div>
 						<div className="flex justify-between">
-							<div className="w-96 flex flex-col items-center gap-5">
+							<div className="md:w-96 flex flex-col items-center gap-5">
 								<img
 									className="w-44 h-44 rounded-full object-cover "
 									src="/assets/bg-fraise.webp"
@@ -146,55 +147,62 @@ export function FruitView() {
 				</div>
 			</div>
 
-			<div className="flex flex-col justify-center items-center gap-5 my-7 px-14">
-				<h2 className="text-3xl font-bold uppercase text-center">
-					La qualité, ça nous tient à coeur
-				</h2>
-				<div className="flex items-center py-16">
-					<img
-						src="/assets/article01-fruit.jpg"
-						alt="Article Fruit Fraise"
-						className="pr-40"
-					/>
-					<div className="pf-40 space-y-8">
-						<h3 className="text-2xl font-bold uppercase">
-							Du champ à votre table
-						</h3>
-						<p>
-							Depuis sa création, BioNature transforme les
-							meilleurs fruits tropicaux issus de filières locales
-							soigneusement choisies. Nos procédés innovants et
-							respectueux de l’environnement capturent et
-							préservent toute la richesse naturelle des saveurs
-							et bienfaits des fruits.
-							<br /> Par respect pour la nature, nos producteurs…
-							et nos consommateurs.
-						</p>
-					</div>
-				</div>
-				<div className="flex items-center py-16">
-					<div className="pr-40 space-y-8">
-						<h3 className="text-2xl font-bold uppercase">
-							Une qualité garantie, tout au long de l’année
-						</h3>
-						<p>
-							Les fruits dépendent du bon-vouloir de la nature.
-							Pour vous offrir la meilleure qualité tout au long
-							de l’année, nos experts goûtent les arrivages de
-							fruits et adaptent leurs recettes et préparations en
-							conséquent. Toujours sans colorant, conservateur ou
-							arôme ajouté, cela va de soi !
-						</p>
-					</div>
-					<img
-						src="/assets/article02-fruit.jpg"
-						alt="Article Fruit Fraise"
-						className="pf-40"
-					/>
+			<div className="flex flex-col justify-center items-center gap-5 my-7 lg:px-14">
+				<div className="w-11/12 md:w-full">
+					<h2 className="text-3xl font-bold uppercase text-center">
+						La qualité, ça nous tient à coeur
+					</h2>
+					{Object.entries(FruitQualityText).map(([key, value]) =>
+						parseInt(key) % 2 === 0 ? (
+							<div
+								key={key}
+								className="flex lg:flex-row-reverse flex-col md:items-center md:py-16 py-5"
+							>
+								<img
+									src={value.img.src}
+									alt={value.img.alt}
+									loading="lazy"
+									className="lg:w-1/2 md:w-full md:mb-4 object-cover"
+								/>
+								<div className={value.section.className}>
+									<h3 className="text-2xl font-bold uppercase">
+										{value.section.title}
+									</h3>
+									{value.section.text.map((text, index) => (
+										<p key={`${key}-text-${index}`}>
+											{text}
+										</p>
+									))}
+								</div>
+							</div>
+						) : (
+							<div
+								key={key}
+								className="flex lg:flex-row flex-col md:items-center md:py-16 py-5"
+							>
+								<img
+									src={value.img.src}
+									alt={value.img.alt}
+									loading="lazy"
+									className="lg:w-1/2 md:w-full md:mb-4 object-cover"
+								/>
+								<div className={value.section.className}>
+									<h3 className="text-2xl font-bold uppercase">
+										{value.section.title}
+									</h3>
+									{value.section.text.map((text, index) => (
+										<p key={`${key}-text-${index}`}>
+											{text}
+										</p>
+									))}
+								</div>
+							</div>
+						)
+					)}
 				</div>
 			</div>
 
-			<div className="flex flex-col justify-center items-center gap-5 my-7 px-14">
+			<div className="flex flex-col items-center md:w-full lg:justify-center lg:items-center gap-5 lg:my-7 lg:px-14">
 				<h2 className="text-3xl font-bold uppercase text-center">
 					Pour vous donner le fruit à la bouche
 				</h2>

@@ -1,55 +1,65 @@
 import { TrashIcon } from "@heroicons/react/16/solid";
 import { AccordionCustom } from "./components/AccordionCustom";
-import { CardBox } from "./components/CardBox";
 import { SelectTri } from "./components/SelectCustom";
-import { Banner } from "./components/BannerCustom";
+import { CardBoxCart } from "./components/CardBox";
 
 export function JusView() {
 	return (
-		<div className="flex flex-col w-full">
-			<div className="mt-4 bg-[url('/assets/bg-fruits.jpg')] bg-cover bg-center bg-no-repeat h-[570px] w-full shadow-lg">
-				<div className="flex flex-col justify-center gap-5 h-full dark:bg-black/50 text-white p-5">
-					<h1 className="text-5xl font-black">
-						Découvrez notre gamme de <br /> jus et boissons
+		<div className="flex flex-col w-full justify-center items-center">
+			<div className="lg-fully-style fully-style bg-cover bg-center bg-[url('/assets/history.png')] bg-no-repeat md:h-[570px] h-[400px] shadow-lg">
+				<div className="flex flex-col justify-center gap-3 md:gap-5 h-full bg-black/50 text-white px-4 sm:px-6 md:px-8 lg:px-14 py-2 md:py-3">
+					<h1 className="text-3xl md:text-4xl lg:text-5xl font-black">
+						Découvrez notre gamme de{" "}
+						<br className="hidden sm:block" /> jus et boissons
 					</h1>
-					<p className="text-base">
+					<p className="text-sm md:text-base max-w-md">
 						Que vous soyez jus frais au petit déjeuner ou repas à la
 						fête, fruitez vos journées avec Materne !
 					</p>
 				</div>
 			</div>
 
-			<div className="flex gap-5 h-3/6 w-full mt-7">
-				<div className="w-96 flex flex-col gap-2.5 p-2">
+			<div className="flex flex-col lg:flex-row gap-4 md:gap-5 w-full mt-4 md:mt-7 px-4 md:px-6 lg:px-8">
+				{/* Filtres - Colonne latérale sur desktop, accordéon en haut sur mobile */}
+				<div className="w-full lg:w-64 xl:w-80 flex flex-col gap-2 md:gap-2.5 p-2 md:p-3 border-b lg:border-b-0 lg:border-r pb-4 lg:pb-0">
 					<div className="flex justify-between items-center">
 						<p className="font-bold">Filtrer :</p>
-						<button className="flex justify-center items-start gap-2.5 bg-red-500 text-white rounded-lg p-2 hover:bg-red-600 pointer">
-							<TrashIcon className="h-5 w-5 inline" /> Supprimer
+						<button className="flex justify-center items-center gap-1.5 md:gap-2.5 bg-red-500 text-white text-sm md:text-base rounded-lg p-1.5 md:p-2 hover:bg-red-600 cursor-pointer">
+							<TrashIcon className="h-4 w-4 md:h-5 md:w-5 inline" />
+							<span className="hidden xs:inline">Supprimer</span>
 						</button>
 					</div>
 					<div>
-						<p>20 produits</p>
+						<p className="text-sm md:text-base">20 produits</p>
 					</div>
 					<div>
 						<AccordionCustom />
 					</div>
 				</div>
 
+				{/* Contenu principal */}
 				<div className="flex flex-col gap-2.5 w-full">
-					<div className="self-end flex items-center gap-2.5 p-2">
-						<span className="font-bold">Trier par : </span>
+					<div className="self-start lg:self-end flex items-center gap-2 md:gap-2.5 p-2">
+						<span className="font-bold text-sm md:text-base">
+							Trier par :{" "}
+						</span>
 						<SelectTri />
 					</div>
-					<div className="flex-grow flex justify-between flex-wrap gap-y-4 p-2">
-						<CardBox />
-						<CardBox />
-						<CardBox />
-						<CardBox />
-					</div>
+					{/* Grille de cartes produits avec espacement amélioré */}
+					<section className="antialiased">
+						<div className="mx-auto max-w-screen-xl">
+							<div className="mb-4 grid gap-4 sm:grid-cols-1 md:mb-8 lg:grid-cols-2 xl:grid-cols-3">
+								<CardBoxCart />
+                                <CardBoxCart />
+                                <CardBoxCart />
+                                <CardBoxCart />
+                                <CardBoxCart />
+                                <CardBoxCart />
+							</div>
+						</div>
+					</section>
 				</div>
 			</div>
-
-			<Banner />
 		</div>
 	);
 }

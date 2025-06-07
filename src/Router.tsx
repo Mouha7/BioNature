@@ -15,6 +15,9 @@ import { LoginView } from "./views/LoginView";
 import { RegisterView } from "./views/RegisterView";
 import { RecoveryView } from "./views/RecoveryView";
 import { CartView } from "./views/CartView";
+import { PrivacyView } from "./views/PrivacyView";
+import { TermsView } from "./views/TermsView";
+import { LegalView } from "./views/LegalView";
 
 export function Router() {
 	return (
@@ -39,6 +42,13 @@ export function Router() {
 				<Route path="/panier" element={<CartView />} />
 				<Route path="/register" element={<RegisterView />} />
 				<Route path="/recovery" element={<RecoveryView />} />
+				<Route path="/nos-engagements" element={<EngagementView />} />
+				<Route
+					path="/politique-confidentialite"
+					element={<PrivacyView />}
+				/>
+				<Route path="/conditions-utilisation" element={<TermsView />} />
+				<Route path="/mentions-legales" element={<LegalView />} />
 				<Route path="*" element={<NotFoundView />} />
 			</Route>
 		</Routes>

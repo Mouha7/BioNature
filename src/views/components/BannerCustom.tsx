@@ -1,6 +1,6 @@
 export function Banner() {
 	return (
-		<div className="fully-style flex justify-center text-center items-center gap-10 h-3/6 mt-7 dark:bg-bio-contraste/25 p-10">
+		<div className="fully-style flex justify-center text-center items-center gap-10 h-3/6 mt-7 bg-bio-contraste/25 p-10">
 			<div className="flex flex-col items-center gap-2">
 				<img
 					className="w-20 object-cover"

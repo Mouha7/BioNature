@@ -195,3 +195,33 @@ export const Fruits = [
 		},
 	},
 ];
+
+export const FruitQualityText = {
+    1: {
+        img: {
+            src: "/assets/article01-fruit.jpg",
+            alt: "Article Fruit Fraise",
+        },
+        section: {
+            title: "Du champ à votre table",
+            text: [
+                "Depuis sa création, BioNature transforme les meilleurs fruits tropicaux issus de filières locales soigneusement choisies. Nos procédés innovants et respectueux de l’environnement capturent et préservent toute la richesse naturelle des saveurs et bienfaits des fruits.",
+                "Par respect pour la nature, nos producteurs… et nos consommateurs.",
+            ],
+            className: "lg:w-1/2 md:space-y-8 space-y-2 lg:ml-10 md:mt-0 mt-5",
+        }
+    },
+    2: {
+        img: {
+            src: "/assets/article02-fruit.jpg",
+            alt: "Article Abeille",
+        },
+        section: {
+            title: "Une qualité garantie, tout au long de l’année",
+            text: [
+                "Les fruits dépendent du bon-vouloir de la nature. Pour vous offrir la meilleure qualité tout au long de l’année, nos experts goûtent les arrivages de fruits et adaptent leurs recettes et préparations en conséquent. Toujours sans colorant, conservateur ou arôme ajouté, cela va de soi !",
+            ],
+            className: "lg:w-1/2 md:space-y-8 space-y-2 lg:mr-10 md:mt-0 mt-5",
+        }
+    },
+}

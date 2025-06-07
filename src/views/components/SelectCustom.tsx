@@ -13,7 +13,7 @@ export function SelectTri() {
 			<SelectTrigger className="w-fit">
 				<SelectValue placeholder="Alphabétique: de A à Z" />
 			</SelectTrigger>
-			<SelectContent className="dark:bg-bio-contraste dark:text-bio">
+			<SelectContent className="bg-bio-contraste text-bio">
 				<SelectGroup>
 					<SelectItem className="hover:bg-bio-contraste/50 cursor-pointer" value="a-z">Alphabétique: de A à Z</SelectItem>
 					<SelectItem className="hover:bg-bio-contraste/50 cursor-pointer" value="z-a">Alphabétique: de Z à A</SelectItem>

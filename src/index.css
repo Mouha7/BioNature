@@ -1,19 +1,65 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
 @import "tw-animate-css";
 
-
 @theme {
-  --color-bio: #fefae0;
-  --color-bio-contraste: #543515;
-  --image-fruits: url('/assets/bg-fruits.jpg');
-  --font-roboto: "Roboto", sans-serif;
+    --color-bio: #fefae0;
+    --color-bio-contraste: #543515;
+    --image-fruits: url("/assets/bg-fruits.jpg");
+    --font-roboto: "Roboto", sans-serif;
+    
+    /* Valeurs en pourcentage du conteneur parent */
+    --fully-margin-percent: 5%;
+    --md-fully-margin-percent: 7%;
+    --lg-fully-margin-percent: 8%;
 }
 
+/* Approche avec calc() et vw pour une adaptation complètement dynamique */
 .fully-style {
-  @apply mx-[-56px] w-[calc(100%+112px)];
+    /* Calcule la marge négative en fonction du conteneur parent */
+    margin-left: calc(0px - var(--fully-margin-percent));
+    margin-right: calc(0px - var(--fully-margin-percent));
+    
+    /* La largeur totale est 100% + 2 fois la marge (pour compenser les marges négatives) */
+    width: calc(100% + (var(--fully-margin-percent) * 2));
+    
+    /* Assure que l'élément ne dépasse jamais la fenêtre visible */
+    max-width: 100vw;
+}
+
+/* Variante pour les écrans md et plus */
+@media (min-width: 768px) {
+    .fully-style {
+        margin-left: calc(0px - var(--md-fully-margin-percent));
+        margin-right: calc(0px - var(--md-fully-margin-percent));
+        width: calc(100% + (var(--md-fully-margin-percent) * 2));
+    }
+}
+
+/* Variante pour les écrans lg et plus */
+@media (min-width: 1024px) {
+    .fully-style {
+        margin-left: calc(0px - var(--lg-fully-margin-percent));
+        margin-right: calc(0px - var(--lg-fully-margin-percent));
+        width: calc(100% + (var(--lg-fully-margin-percent) * 2));
+    }
+}
+
+/* Pour les cas où vous avez besoin d'une largeur vraiment "edge-to-edge" */
+.full-viewport-width {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
 }
 
 .border-bottom {
-  @apply border-b-1 border-bio-contraste/15;
+    @apply border-b-1 border-bio-contraste/15;
+}
+
+/* Masquer l'icône uniquement dans l'accordéon du panier */
+.cart-details-accordion [data-slot="accordion-trigger"] > svg {
+    display: none;
 }

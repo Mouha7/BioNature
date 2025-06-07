@@ -23,7 +23,7 @@ export function FruitDetailView() {
 				className="mt-7 bg-cover bg-center bg-no-repeat h-[570px] w-7xl shadow-lg"
 				style={{ backgroundImage: `url(${fruitDetails.s01.src})` }}
 			>
-				<div className="flex flex-col justify-center items-center gap-5 h-full dark:bg-black/50 text-white p-5">
+				<div className="flex flex-col justify-center items-center gap-5 h-full bg-black/50 text-white p-5">
 					<h1 className="text-4xl font-black">
 						{fruitDetails.s01.title}
 					</h1>

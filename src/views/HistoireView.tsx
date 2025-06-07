@@ -1,12 +1,15 @@
+import { Histoires } from "@/constants/Histoires";
+
 export function HistoireView() {
 	return (
 		<div className="flex flex-col w-full justify-center items-center">
-			<div className="mt-4 bg-cover bg-center bg-[url('/assets/bg-fruits.jpg')] bg-no-repeat h-[570px] w-7xl shadow-lg">
-				<div className="flex flex-col justify-center items-center gap-5 h-full dark:bg-black/50 text-white p-5">
-					<h1 className="text-4xl font-black">
+			{/* Section bannière responsive */}
+			<div className="fully-style bg-cover bg-center bg-[url('/assets/history.png')] bg-no-repeat h-[300px] xs:h-[350px] sm:h-[400px] md:h-[450px] lg:h-[500px] xl:h-[570px] shadow-lg">
+				<div className="flex flex-col justify-center items-center gap-3 sm:gap-4 md:gap-5 h-full bg-black/25 text-white p-4 sm:p-5 md:p-6 lg:p-8">
+					<h1 className="text-2xl xs:text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-center">
 						BioNature, une histoire enracinée dans la nature
 					</h1>
-					<p className="text-center w-[766px]">
+					<p className="text-sm sm:text-base md:text-lg text-center max-w-xs xs:max-w-sm sm:max-w-md md:max-w-lg lg:max-w-2xl">
 						Depuis sa création, BioNature met la richesse des fruits
 						tropicaux au service du bien-être et du plaisir pour
 						toute la famille.
@@ -14,128 +17,70 @@ export function HistoireView() {
 				</div>
 			</div>
 
-			<div className="flex flex-col justify-center items-center gap-5 my-7 px-14">
-				<div className="flex items-center py-16">
-					<img
-						src="/assets/Drapeau-Senegal.webp"
-						alt="Drapeau du Sénégal"
-						loading="lazy"
-						className="pr-40 object-cover"
-					/>
-					<div className="pf-40 space-y-8">
-						<h3 className="text-2xl font-bold uppercase">
-							Il était BioNature une fois
-						</h3>
-						<p>
-							Nous sommes en 2025, au Sénégal, terre riche en
-							biodiversité tropicale. C’est cette année qu’est née
-							BioNature, une initiative vouée à valoriser les
-							fruits tropicaux tout en soutenant les producteurs
-							locaux. Inspirée par la richesse naturelle du
-							Sénégal, BioNature s’est donnée pour mission de
-							proposer des produits authentiques, naturels et
-							respectueux de l’environnement.
-							<br />
-							<br />
-							L’aventure commence dans la région de Casamance,
-							avec l’ambition de transformer les trésors agricoles
-							locaux tels que la mangue, l’ananas et le fruit de
-							baobab en produits de qualité supérieure. Dès ses
-							débuts, BioNature se distingue par son engagement
-							envers l’innovation, la durabilité et l’impact
-							positif sur les communautés locales.
-						</p>
-					</div>
-				</div>
-				<div className="flex items-center py-16">
-					<div className="pr-40 space-y-8">
-						<h3 className="text-2xl font-bold uppercase">
-							Les premières années : Une vision qui prend racine
-						</h3>
-						<p>
-							En 2026, BioNature inaugure sa première unité de
-							transformation à Ziguinchor pour répondre à la
-							demande croissante de jus et autres produits
-							naturels. Rapidement, les produits BioNature
-							séduisent les consommateurs locaux grâce à leur
-							qualité exceptionnelle et leur saveur authentique.
-							<br />
-							<br />
-							En 2027, BioNature élargit sa gamme en intégrant de
-							nouveaux fruits comme le citron et la papaye. Chaque
-							produit reflète le savoir-faire sénégalais et une
-							approche respectueuse de l’environnement, en
-							partenariat avec des coopératives agricoles locales.
-						</p>
-					</div>
-					<img
-						src="/assets/Drapeau-Senegal.webp"
-						alt="Article Fruit"
-						loading="lazy"
-						className="pf-40 object-cover"
-					/>
-				</div>
-				<div className="flex items-center py-16">
-					<img
-						src="/assets/Drapeau-Senegal.webp"
-						alt="Article Fruits"
-						loading="lazy"
-						className="pr-40 object-cover"
-					/>
-					<div className="pf-40 space-y-8">
-						<h3 className="text-2xl font-bold uppercase">
-							Toujours plus d’innovation et de durabilité
-						</h3>
-						<p>
-							Au fil des années, BioNature continue d’innover pour
-							répondre aux attentes des consommateurs. En 2029, la
-							marque lance une gamme de jus enrichis en
-							superfruits locaux tels que le bissap (fleur
-							d’hibiscus) et le tamarin, alliant plaisir et
-							bienfaits pour la santé.
-							<br />
-							<br />
-							En 2030, BioNature franchit un nouveau cap en
-							proposant des emballages 100% recyclables, affirmant
-							son engagement pour une planète plus verte.
-							Parallèlement, la marque s’implante dans de nouveaux
-							marchés africains, faisant rayonner les saveurs du
-							Sénégal au-delà de ses frontières.
-						</p>
-					</div>
-				</div>
-				<div className="flex items-center py-16">
-					<div className="pr-40 space-y-8">
-						<h3 className="text-2xl font-bold uppercase">
-							BioNature, une âme engagée
-						</h3>
-						<p>
-							Depuis sa création, BioNature n’a cessé de valoriser
-							les richesses naturelles et humaines du Sénégal. Au
-							cœur de son développement, l’entreprise conserve ses
-							valeurs fondamentales : authenticité, durabilité et
-							impact positif sur les communautés locales.
-							<br />
-							<br />
-							Aujourd’hui, BioNature est bien plus qu’une marque.
-							C’est un mouvement, une vision pour un Sénégal qui
-							capitalise sur ses ressources agricoles et propose
-							au monde des produits d’exception. Et l’histoire ne
-							fait que commencer…
-							<br />
-							<br />
-							Jour après jour, BioNature continue de relever de
-							nouveaux défis et d’imaginer des produits innovants,
-							pour écrire avec vous les plus belles pages d’un
-							avenir durable.
-						</p>
-					</div>
-					<img
-						src="/assets/Drapeau-Senegal.webp"
-						alt="Article Fruit"
-						loading="lazy"
-						className="pf-40 object-cover"
-					/>
+			{/* Section contenu principal responsive */}
+			<div className="flex flex-col items-center w-full gap-4 sm:gap-5 md:gap-6 lg:gap-8 my-4 sm:my-5 md:my-6 lg:my-8 px-4 sm:px-6 md:px-8 lg:px-14">
+				<div className="w-full max-w-7xl">
+					{Object.entries(Histoires).map(([key, history]) =>
+						parseInt(key) % 2 === 0 ? (
+							<div
+								key={key}
+								className="flex flex-col lg:flex-row-reverse gap-4 sm:gap-5 md:gap-6 lg:gap-8 md:items-center py-4 sm:py-6 md:py-8 lg:py-12 xl:py-16 border-b border-bio-contraste/10 last:border-0"
+							>
+								<div className="w-full lg:w-1/2">
+									<img
+										src={history.img.src}
+										alt={history.img.alt}
+										loading="lazy"
+										className="object-cover w-full h-auto rounded-lg shadow-md"
+									/>
+								</div>
+								<div
+									className={`w-full lg:w-1/2 lg:pr-8 mt-4 lg:mt-0 ${history.section.className}`}
+								>
+									<h3 className="text-xl sm:text-2xl md:text-3xl font-bold uppercase mb-3 sm:mb-4 text-bio-contraste">
+										{history.section.title}
+									</h3>
+									{history.section.text.map((text, index) => (
+										<p
+											key={`${key}-text-${index}`}
+											className="mb-3 text-sm sm:text-base md:text-lg text-bio-contraste/90 leading-relaxed"
+										>
+											{text}
+										</p>
+									))}
+								</div>
+							</div>
+						) : (
+							<div
+								key={key}
+								className="flex flex-col lg:flex-row gap-4 sm:gap-5 md:gap-6 lg:gap-8 md:items-center py-4 sm:py-6 md:py-8 lg:py-12 xl:py-16 border-b border-bio-contraste/10 last:border-0"
+							>
+								<div className="w-full lg:w-1/2">
+									<img
+										src={history.img.src}
+										alt={history.img.alt}
+										loading="lazy"
+										className="object-cover w-full h-auto rounded-lg shadow-md"
+									/>
+								</div>
+								<div
+									className={`w-full lg:w-1/2 lg:pl-8 mt-4 lg:mt-0 ${history.section.className}`}
+								>
+									<h3 className="text-xl sm:text-2xl md:text-3xl font-bold uppercase mb-3 sm:mb-4 text-bio-contraste">
+										{history.section.title}
+									</h3>
+									{history.section.text.map((text, index) => (
+										<p
+											key={`${key}-text-${index}`}
+											className="mb-3 text-sm sm:text-base md:text-lg text-bio-contraste/90 leading-relaxed"
+										>
+											{text}
+										</p>
+									))}
+								</div>
+							</div>
+						)
+					)}
 				</div>
 			</div>
 		</div>
