@@ -45,12 +45,15 @@ export function CarouselSize() {
 						<div className="p-0.5 sm:p-1">
 							<Card className="overflow-hidden">
 								<CardContent className="flex aspect-square items-center justify-center p-1 sm:p-2 md:p-4 lg:p-6">
-									<img
-										className="w-full h-auto max-w-full sm:max-w-[250px] sm:max-h-[250px] object-contain"
-										src={image.src}
-										alt={image.alt}
-										loading="lazy"
-									/>
+									{/* Conteneur à ratio d'aspect fixe */}
+									<div className="relative w-full h-full flex items-center justify-center">
+										<img
+											className="max-w-full max-h-full object-contain"
+											src={image.src}
+											alt={image.alt}
+											loading="lazy"
+										/>
+									</div>
 								</CardContent>
 							</Card>
 						</div>
