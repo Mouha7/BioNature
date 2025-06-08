@@ -2,14 +2,14 @@ import { Link } from "react-router-dom";
 
 const BannerProductData = [
 	{
-		image: "/assets/confiture_mangue.png",
+		image: "/assets/confiture_fraise.png",
 		label: "Confiture",
-		to: "/catalogue/confitures"
+		to: "/catalogue/produit/confiture-fraise-1"
 	},
 	{
 		image: "/assets/Orange.png",
 		label: "Boissons",
-		to: "/catalogue/gamme-jus"
+		to: "/catalogue/produit/juice-orange-1"
 	}
 ];
 

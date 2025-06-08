@@ -112,7 +112,7 @@ export function HomeView() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-4 md:gap-6">
                     {/* Produit 1 */}
                     <Link 
-                        to="/catalogue/produit/jus-orange-1" 
+                        to="/catalogue/produit/juice-orange-1" 
                         className="rounded-lg shadow-sm p-4 sm:p-3 md:p-4 transition-transform hover:scale-[1.02] duration-200"
                     >
                         <div className="relative pb-3 sm:pb-4">
@@ -144,7 +144,7 @@ export function HomeView() {
                     
                     {/* Produit 2 */}
                     <Link 
-                        to="/catalogue/produit/jus-orange-2" 
+                        to="/catalogue/produit/jus-orange-1" 
                         className="rounded-lg shadow-sm p-4 sm:p-3 md:p-4 transition-transform hover:scale-[1.02] duration-200"
                     >
                         <div className="relative pb-3 sm:pb-4">
