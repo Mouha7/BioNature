@@ -11,15 +11,23 @@ import {
 import { FaCartShopping } from "react-icons/fa6";
 import { CardCart } from "./CardBox";
 import { Link } from "react-router-dom";
+import { useCart } from "../../contexts/CartContext";
 
 export function Cart() {
+	// Récupérer le contexte du panier
+	const { cart, totalItems, totalPrice } = useCart();
+
+	// Calculer la TVA (20%)
+	const tva = totalPrice * 0.2;
+	const total = totalPrice + tva;
+
 	return (
 		<Sheet>
 			<SheetTrigger asChild>
 				<button className="relative flex items-center hover:text-bio-contraste transition-colors">
 					<FaCartShopping className="text-base sm:text-lg md:text-xl" />
 					<span className="absolute -top-2 -right-2 bg-bio-contraste text-bio text-xs w-4 h-4 flex items-center justify-center rounded-full">
-						2
+						{totalItems}
 					</span>
 				</button>
 			</SheetTrigger>
@@ -29,49 +37,67 @@ export function Cart() {
 			>
 				<SheetHeader className="border-bottom py-2 mb-3">
 					<SheetTitle className="text-base sm:text-lg md:text-xl">
-						Votre panier (2 articles)
+						Votre panier ({totalItems} article
+						{totalItems !== 1 ? "s" : ""})
 					</SheetTitle>
 				</SheetHeader>
 
 				<div className="h-[calc(100%-140px)] sm:h-[calc(100%-150px)] md:h-[calc(100%-160px)] overflow-auto border-bottom space-y-3 py-2">
-					<CardCart />
-					<CardCart />
+					{cart.length === 0 ? (
+						<div className="flex flex-col items-center justify-center h-full">
+							<p className="text-center mb-4">Votre panier est vide</p>
+							<SheetClose asChild>
+								<Link
+									to="/catalogue/gamme-jus"
+									className="bg-bio-contraste text-bio py-2 px-4 rounded-md hover:bg-bio-contraste/90 transition-colors"
+								>
+									Découvrir nos produits
+								</Link>
+							</SheetClose>
+						</div>
+					) : (
+						cart.map((item) => (
+							<CardCart
+								key={item.id}
+								id={item.id}
+								name={item.name}
+								price={item.price}
+								quantity={item.quantity}
+								imageUrl={item.imageUrl}
+							/>
+						))
+					)}
 				</div>
 
-				<SheetFooter className="flex-col space-y-3 pt-3 mt-2">
-					<div className="w-full space-y-1.5">
-						<div className="flex justify-between items-center text-sm sm:text-base">
-							<h3 className="font-medium">Sous-total</h3>
-							<p>800 FCFA</p>
+				{cart.length > 0 && (
+					<SheetFooter className="flex-col space-y-3 pt-3 mt-2">
+						<div className="w-full space-y-1.5">
+							<div className="flex justify-between items-center text-sm sm:text-base">
+								<h3 className="font-medium">Sous-total</h3>
+								<p>{totalPrice} FCFA</p>
+							</div>
+							<div className="flex justify-between items-center text-sm sm:text-base">
+								<h3 className="font-medium">TVA (20%)</h3>
+								<p>{tva} FCFA</p>
+							</div>
+							<div className="flex justify-between items-center text-base sm:text-lg font-semibold">
+								<h3>Total</h3>
+								<p>{total} FCFA</p>
+							</div>
 						</div>
-						<div className="flex justify-between items-center text-sm sm:text-base">
-							<h3 className="font-medium">TVA (20%)</h3>
-							<p>160 FCFA</p>
-						</div>
-						<div className="flex justify-between items-center text-base sm:text-lg font-semibold">
-							<h3>Total</h3>
-							<p>960 FCFA</p>
-						</div>
-					</div>
 
-					<div className="w-full space-y-3">
-						<Button
-							className="bg-bio-contraste text-bio uppercase rounded-md cursor-pointer w-full py-2 h-auto text-sm sm:text-base font-semibold hover:bg-bio-contraste/90 transition-colors"
-							type="submit"
-						>
-							Procéder au paiement
-						</Button>
-
-						<SheetClose asChild>
-							<Link
-								className="text-center font-medium underline block hover:text-bio-contraste/80 transition-colors text-sm sm:text-base"
-								to="/panier"
-							>
-								Voir le panier
-							</Link>
-						</SheetClose>
-					</div>
-				</SheetFooter>
+						<div className="w-full space-y-3">
+							<SheetClose asChild>
+								<Button
+									asChild
+									className="bg-bio-contraste text-bio uppercase rounded-md cursor-pointer w-full py-2 h-auto text-sm sm:text-base font-semibold hover:bg-bio-contraste/90 transition-colors"
+								>
+									<Link to="/panier">Procéder au paiement</Link>
+								</Button>
+							</SheetClose>
+						</div>
+					</SheetFooter>
+				)}
 			</SheetContent>
 		</Sheet>
 	);

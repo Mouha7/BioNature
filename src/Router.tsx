@@ -18,6 +18,8 @@ import { CartView } from "./views/CartView";
 import { PrivacyView } from "./views/PrivacyView";
 import { TermsView } from "./views/TermsView";
 import { LegalView } from "./views/LegalView";
+import { ProductDetailView } from "./views/ProductDetailView";
+import { PromotionsView } from "./views/PromotionsView";
 
 export function Router() {
 	return (
@@ -27,7 +29,7 @@ export function Router() {
 				<Route path="/catalogue">
 					<Route index element={<CatalogueView />} />
 					<Route path="gamme-jus" element={<JusView />} />
-					{/* <Route path="produit/:id" element={<ProduitView />} /> */}
+					<Route path="produit/:id" element={<ProductDetailView />} />
 				</Route>
 				<Route path="/profile" element={<ClientView />} />
 				<Route path="/fruits">
@@ -40,6 +42,7 @@ export function Router() {
 				<Route path="/contact" element={<ContactView />} />
 				<Route path="/login" element={<LoginView />} />
 				<Route path="/panier" element={<CartView />} />
+				<Route path="/promotions" element={<PromotionsView />} />
 				<Route path="/register" element={<RegisterView />} />
 				<Route path="/recovery" element={<RecoveryView />} />
 				<Route path="/nos-engagements" element={<EngagementView />} />

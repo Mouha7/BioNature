@@ -206,7 +206,7 @@ export function FruitView() {
 				<h2 className="text-3xl font-bold uppercase text-center">
 					Pour vous donner le fruit à la bouche
 				</h2>
-				<CarouselSize imgSrc="/assets/orange.avif" />
+				<CarouselSize />
 			</div>
 		</div>
 	);

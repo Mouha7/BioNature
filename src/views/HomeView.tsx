@@ -1,33 +1,36 @@
-import { Link } from "react-router-dom";
 import { BtnCustom } from "./components/BtnCustom";
 import { CarouselSize } from "./components/CarouselSize";
 import { BannerProduct } from "./components/BannerProduct";
+import { Link } from "react-router-dom";
 
 export function HomeView() {
     return (
         <div className="flex flex-col w-full justify-center items-center">
-            <div className="lg-fully-style fully-style bg-cover bg-center bg-[url('/assets/bg-fruits.jpg')] bg-no-repeat md:h-[570px] h-[400px] shadow-lg">
+            {/* Bannière principale */}
+            <div className="lg-fully-style fully-style bg-cover bg-center bg-[url('/assets/bg-fruits.jpg')] bg-no-repeat md:h-[570px] sm:h-[450px] h-[400px] shadow-lg">
                 <div className="flex flex-col items-center justify-center gap-3 md:gap-5 h-full bg-black/50 text-white p-4 md:p-5">
-                    <h1 className="text-2xl sm:text-3xl md:text-4xl font-black">
+                    <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-black text-center">
                         BIENVENUE CHEZ BIONATURE
                     </h1>
-                    <BtnCustom to="" text="Miam, je commande !" />
+                    <BtnCustom to="/catalogue/gamme-jus" text="Miam, je commande !" className="mt-2 sm:mt-4" />
                 </div>
             </div>
 
-            <div className="lg-fully-style fully-style flex flex-col items-center gap-3 md:gap-5 w-full mb-5 md:mb-7 mt-8 md:mt-20 bg-bio-contraste/5 px-4 md:px-6">
-                <h2 className="my-3 md:my-5 text-xl sm:text-2xl md:text-3xl font-bold uppercase text-center">
+            {/* Section Histoire */}
+            <div className="lg-fully-style fully-style flex flex-col items-center gap-4 sm:gap-5 md:gap-8 w-full mb-6 sm:mb-8 md:mb-10 mt-8 md:mt-16 bg-bio-contraste/5 px-4 sm:px-6 md:px-8 py-6 sm:py-8 md:py-12">
+                <h2 className="my-2 sm:my-3 md:my-4 text-xl sm:text-2xl md:text-3xl font-bold uppercase text-center">
                     BioNature, une histoire de famille Africaine
                 </h2>
 
-                <div className="flex flex-col md:flex-row justify-between w-full gap-6 md:gap-4">
-                    <div className="flex flex-col items-center gap-3 md:gap-5 p-3 md:p-5 w-full md:w-1/3">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 md:gap-6 lg:gap-8 w-full">
+                    {/* Carte Sénégal */}
+                    <div className="flex flex-col items-center gap-3 md:gap-4 p-3 sm:p-4 md:p-5 w-full bg-white/40 rounded-lg shadow-sm">
                         <img
                             src="/assets/Drapeau-Senegal.webp"
                             alt="Drapeau du Sénégal"
-                            className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 object-cover rounded-full"
+                            className="w-20 h-20 xs:w-24 xs:h-24 sm:w-28 sm:h-28 md:w-24 md:h-24 lg:w-28 lg:h-28 object-cover rounded-full"
                         />
-                        <p className="text-xl sm:text-2xl md:text-3xl font-bold uppercase text-center">Sénégal</p>
+                        <p className="text-lg sm:text-xl md:text-2xl font-bold uppercase text-center">Sénégal</p>
                         <p className="text-sm md:text-base text-center">
                             BioNature est une entreprise familiale qui se
                             consacre à la production de jus de fruits naturels
@@ -36,13 +39,15 @@ export function HomeView() {
                             l'esprit.
                         </p>
                     </div>
-                    <div className="flex flex-col items-center gap-3 md:gap-5 p-3 md:p-5 w-full md:w-1/3">
+                    
+                    {/* Carte BioNature */}
+                    <div className="flex flex-col items-center gap-3 md:gap-4 p-3 sm:p-4 md:p-5 w-full bg-white/40 rounded-lg shadow-sm">
                         <img
                             src="/assets/logo.png"
                             alt="Logo BioNature"
-                            className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 object-cover rounded-full"
+                            className="w-20 h-20 xs:w-24 xs:h-24 sm:w-28 sm:h-28 md:w-24 md:h-24 lg:w-28 lg:h-28 object-cover rounded-full"
                         />
-                        <p className="text-xl sm:text-2xl md:text-3xl font-bold uppercase text-center">
+                        <p className="text-lg sm:text-xl md:text-2xl font-bold uppercase text-center">
                             BioNature
                         </p>
                         <p className="text-sm md:text-base text-center">
@@ -54,13 +59,15 @@ export function HomeView() {
                             avec des pratiques durables.
                         </p>
                     </div>
-                    <div className="flex flex-col items-center gap-3 md:gap-5 p-3 md:p-5 w-full md:w-1/3">
+                    
+                    {/* Carte Numéro Un */}
+                    <div className="flex flex-col items-center gap-3 md:gap-4 p-3 sm:p-4 md:p-5 w-full bg-white/40 rounded-lg shadow-sm">
                         <img
                             src="/assets/top-one.png"
                             alt="Top One"
-                            className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 object-cover rounded-full"
+                            className="w-20 h-20 xs:w-24 xs:h-24 sm:w-28 sm:h-28 md:w-24 md:h-24 lg:w-28 lg:h-28 object-cover rounded-full"
                         />
-                        <p className="text-xl sm:text-2xl md:text-3xl font-bold uppercase text-center">
+                        <p className="text-lg sm:text-xl md:text-2xl font-bold uppercase text-center">
                             Numéro Un Mondial
                         </p>
                         <p className="text-sm md:text-base text-center">
@@ -72,44 +79,60 @@ export function HomeView() {
                 </div>
             </div>
 
-            <div className="flex flex-col gap-3 md:gap-5 w-full my-5 md:my-7 px-4 md:px-6">
-                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold uppercase text-center md:text-left">Nos produits</h2>
-                <p className="w-full md:w-5xl text-sm md:text-base">
-                    Pour toutes les envies, tous les âges et tous les moments de
-                    la journée, il y a toujours un produit BioNature fait pour
-                    vous. Le plaisir des fruits tropicaux sous toutes leurs
-                    formes, à savourer en solo, en famille ou avec vos proches,
-                    tout en respectant la nature et les producteurs locaux.
-                </p>
+            {/* Section Nos Produits */}
+            <div className="flex flex-col gap-4 w-full my-6 sm:my-8 md:my-10 px-4 sm:px-6 md:px-8">
+                <div className="text-center md:text-left">
+                    <h2 className="text-xl sm:text-2xl md:text-3xl font-bold uppercase mb-3 sm:mb-4">Nos produits</h2>
+                    <p className="w-full md:max-w-3xl text-sm md:text-base mb-4 sm:mb-6 md:mb-8">
+                        Pour toutes les envies, tous les âges et tous les moments de
+                        la journée, il y a toujours un produit BioNature fait pour
+                        vous. Le plaisir des fruits tropicaux sous toutes leurs
+                        formes, à savourer en solo, en famille ou avec vos proches,
+                        tout en respectant la nature et les producteurs locaux.
+                    </p>
+                </div>
                 <BannerProduct />
             </div>
 
-            <div className="flex flex-col gap-3 md:gap-5 w-full my-5 md:my-7 px-4 md:px-6">
-                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold uppercase text-center md:text-left">
-                    Agissons ensemble contre le gaspillage !
-                </h2>
-                <p className="w-full md:w-5xl text-sm md:text-base">
-                    Chez BioNature, nous essayons de lutter contre le gaspillage
-                    alimentaire à notre échelle. C'est pourquoi, nous vous
-                    proposons nos produits à date de consommation courte. Tout
-                    aussi bon et qualitatif mais à consommer rapidement.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 md:gap-10 justify-center sm:justify-start">
-                    <Link to="" className="w-full sm:w-auto">
-                        <div className="flex flex-col relative gap-2 md:gap-2.5 max-w-full sm:max-w-xs mx-auto sm:mx-0">
-                            <span className="absolute top-12 sm:top-16 left-12 transform -translate-x-1/2 -translate-y-1/2 w-fit bg-amber-400 text-white text-center py-1 px-3 sm:py-2 sm:px-4 text-sm sm:text-base">
+            {/* Section Anti-gaspillage */}
+            <div className="flex flex-col gap-4 w-full my-6 sm:my-8 md:my-10 px-4 sm:px-6 md:px-8 bg-bio/30 py-6 sm:py-8 md:py-10">
+                <div className="text-center md:text-left">
+                    <h2 className="text-xl sm:text-2xl md:text-3xl font-bold uppercase mb-3 sm:mb-4">
+                        Agissons ensemble contre le gaspillage !
+                    </h2>
+                    <p className="w-full md:max-w-3xl text-sm md:text-base mb-4 sm:mb-6">
+                        Chez BioNature, nous essayons de lutter contre le gaspillage
+                        alimentaire à notre échelle. C'est pourquoi, nous vous
+                        proposons nos produits à date de consommation courte. Tout
+                        aussi bon et qualitatif mais à consommer rapidement.
+                    </p>
+                </div>
+                
+                {/* Produits anti-gaspillage */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-4 md:gap-6">
+                    {/* Produit 1 */}
+                    <Link 
+                        to="/catalogue/produit/jus-orange-1" 
+                        className="rounded-lg shadow-sm p-4 sm:p-3 md:p-4 transition-transform hover:scale-[1.02] duration-200"
+                    >
+                        <div className="relative pb-3 sm:pb-4">
+                            <span className="absolute top-0 left-0 m-2 bg-amber-400 text-white text-center py-1 px-3 text-xs sm:text-sm rounded-md">
                                 Épuisé
                             </span>
-                            <img
-                                className="object-cover p-3 sm:p-5 w-full"
-                                src="/assets/Orange.png"
-                                alt="Orange Juice"
-                            />
-                            <p className="font-bold text-base sm:text-lg">
+                            <div className="h-36 sm:h-40 md:h-44 flex items-center justify-center">
+                                <img
+                                    className="object-contain h-full"
+                                    src="/assets/Orange.png"
+                                    alt="Orange Juice"
+                                />
+                            </div>
+                        </div>
+                        <div>
+                            <p className="font-bold text-sm sm:text-base md:text-lg mb-1">
                                 Jus d'orange pressée - DLC 28/05/25
                             </p>
                             <p>
-                                <span className="font-light line-through text-sm sm:text-base">
+                                <span className="font-light line-through text-xs sm:text-sm">
                                     1500 FCFA
                                 </span>{" "}
                                 <span className="text-amber-400 font-bold text-sm sm:text-base">
@@ -118,21 +141,30 @@ export function HomeView() {
                             </p>
                         </div>
                     </Link>
-                    <Link to="" className="w-full sm:w-auto">
-                        <div className="flex flex-col relative gap-2 md:gap-2.5 max-w-full sm:max-w-xs mx-auto sm:mx-0">
-                            <span className="absolute top-12 sm:top-16 left-12 sm:left-16 transform -translate-x-1/2 -translate-y-1/2 w-fit bg-amber-400 text-white text-center py-1 px-3 sm:py-2 sm:px-4 text-sm sm:text-base">
+                    
+                    {/* Produit 2 */}
+                    <Link 
+                        to="/catalogue/produit/jus-orange-2" 
+                        className="rounded-lg shadow-sm p-4 sm:p-3 md:p-4 transition-transform hover:scale-[1.02] duration-200"
+                    >
+                        <div className="relative pb-3 sm:pb-4">
+                            <span className="absolute top-0 left-0 m-2 bg-amber-400 text-white text-center py-1 px-3 text-xs sm:text-sm rounded-md">
                                 Disponible
                             </span>
-                            <img
-                                className="object-cover p-3 sm:p-5 w-full"
-                                src="/assets/Orange.png"
-                                alt="Orange Juice"
-                            />
-                            <p className="font-bold text-base sm:text-lg">
+                            <div className="h-36 sm:h-40 md:h-44 flex items-center justify-center">
+                                <img
+                                    className="object-contain h-full"
+                                    src="/assets/Orange.png"
+                                    alt="Orange Juice"
+                                />
+                            </div>
+                        </div>
+                        <div>
+                            <p className="font-bold text-sm sm:text-base md:text-lg mb-1">
                                 Jus d'orange pressée - DLC 28/05/25
                             </p>
                             <p>
-                                <span className="font-light line-through text-sm sm:text-base">
+                                <span className="font-light line-through text-xs sm:text-sm">
                                     1500 FCFA
                                 </span>{" "}
                                 <span className="text-amber-400 font-bold text-sm sm:text-base">
@@ -142,38 +174,59 @@ export function HomeView() {
                         </div>
                     </Link>
                 </div>
-                <div className="flex justify-center sm:justify-start mt-2 sm:mt-0">
+                
+                {/* Bouton */}
+                <div className="flex justify-center sm:justify-start mt-4 sm:mt-6">
                     <BtnCustom
-                        to=""
+                        to="/promotions"
                         text="Toutes nos promotions à date courte"
-                        className="uppercase text-sm md:text-base"
+                        className="text-xs sm:text-sm md:text-base"
                     />
                 </div>
             </div>
 
-            <div className="flex flex-col gap-3 md:gap-5 w-full my-5 md:my-7 px-4 md:px-6">
-                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold uppercase text-center">
+            {/* Section #Merci Les Fruits */}
+            <div className="flex flex-col gap-4 w-full my-6 sm:my-8 md:my-10 px-4 sm:px-6 md:px-8">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold uppercase text-center mb-3 sm:mb-5">
                     #Merci Les Fruits
                 </h2>
                 <div className="flex w-full justify-center">
-                    <CarouselSize imgSrc="/assets/Orange.png" />
+                    <CarouselSize />
                 </div>
             </div>
 
-            <div className="flex flex-col gap-3 md:gap-5 w-full my-5 md:my-7 px-4 md:px-6">
-                <h2 className="text-xl sm:text-2xl md:text-3xl text-center font-bold uppercase">
+            {/* Section Magasin */}
+            <div className="lg-fully-style fully-style flex flex-col gap-3 sm:gap-4 md:gap-5 w-full my-6 sm:my-8 md:my-10 px-4 sm:px-6 md:px-8 py-6 sm:py-8 md:py-10 bg-bio-contraste/5">
+                <h2 className="text-xl sm:text-2xl md:text-3xl text-center font-bold uppercase mb-3 sm:mb-4">
                     Bienvenue dans le plus grand magasin BioNature du Sénégal !
                 </h2>
-                <p className="text-center text-sm md:text-base">
-                    Tous les avantages de notre eshop en un clin d'oeil :
-                </p>
-                <p className="text-center text-sm md:text-base">
-                    Retrouvez notre <strong>assortiment complet</strong>
-                </p>
-                <p className="text-center text-sm md:text-base">
-                    Profitez de l'<strong>envoi gratuit en Dakar</strong> à
-                    partir de 20 000 FCFA
-                </p>
+                <div className="flex flex-col gap-2 sm:gap-3 md:gap-4 max-w-xl mx-auto">
+                    <p className="text-center text-sm md:text-base font-medium">
+                        Tous les avantages de notre eshop en un clin d'oeil :
+                    </p>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mt-2">
+                        <div className="flex items-center bg-white/60 rounded-lg p-3 sm:p-4">
+                            <div className="flex-shrink-0 mr-3">
+                                <svg className="w-5 h-5 text-bio-contraste" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <p className="text-sm md:text-base">
+                                Retrouvez notre <strong>assortiment complet</strong>
+                            </p>
+                        </div>
+                        <div className="flex items-center bg-white/60 rounded-lg p-3 sm:p-4">
+                            <div className="flex-shrink-0 mr-3">
+                                <svg className="w-5 h-5 text-bio-contraste" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <p className="text-sm md:text-base">
+                                Profitez de l'<strong>envoi gratuit en Dakar</strong> à partir de 20 000 FCFA
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     );

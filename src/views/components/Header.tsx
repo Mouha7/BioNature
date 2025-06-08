@@ -8,11 +8,17 @@ export function Header() {
     const [hasScrolled, setHasScrolled] = useState(false);
     const menuRef = useRef<HTMLDivElement>(null);
     
-    // Classe responsive pour le menu hamburger
+    // Classe responsive pour le menu hamburger et desktop
     const navLinkStyles = ({ isActive }: { isActive: boolean }) =>
         isActive
             ? "font-bold text-bio-contraste border-b-2 border-bio-contraste transition-colors duration-200 px-2 py-1.5 md:px-3 md:py-2"
             : "font-medium hover:text-bio-contraste/80 hover:border-b-2 hover:border-bio-contraste transition-colors duration-200 px-2 py-1.5 md:px-3 md:py-2";
+    
+    // Style spécifique pour les liens du menu mobile
+    const mobileNavLinkStyles = ({ isActive }: { isActive: boolean }) =>
+        isActive
+            ? "block text-lg font-bold text-bio-contraste border-b-2 border-bio-contraste py-1"
+            : "block text-lg font-medium hover:text-bio-contraste/80 hover:border-b-2 hover:border-bio-contraste transition-colors duration-200 py-1";
 
     // Détecter le scroll pour appliquer l'ombre
     useEffect(() => {
@@ -167,7 +173,7 @@ export function Header() {
                                 <li>
                                     <NavLink
                                         to="/"
-                                        className="block text-lg font-medium"
+                                        className={mobileNavLinkStyles}
                                         onClick={() => setIsOpen(false)}
                                     >
                                         Accueil
@@ -176,7 +182,7 @@ export function Header() {
                                 <li>
                                     <NavLink
                                         to="/catalogue/gamme-jus"
-                                        className="block text-lg font-medium"
+                                        className={mobileNavLinkStyles}
                                         onClick={() => setIsOpen(false)}
                                     >
                                         Nos produits
@@ -185,7 +191,7 @@ export function Header() {
                                 <li>
                                     <NavLink
                                         to="/fruits"
-                                        className="block text-lg font-medium"
+                                        className={mobileNavLinkStyles}
                                         onClick={() => setIsOpen(false)}
                                     >
                                         Nos fruits
@@ -194,7 +200,7 @@ export function Header() {
                                 <li>
                                     <NavLink
                                         to="/notre-histoire"
-                                        className="block text-lg font-medium"
+                                        className={mobileNavLinkStyles}
                                         onClick={() => setIsOpen(false)}
                                     >
                                         Notre histoire
@@ -203,7 +209,7 @@ export function Header() {
                                 <li>
                                     <NavLink
                                         to="/contact"
-                                        className="block text-lg font-medium"
+                                        className={mobileNavLinkStyles}
                                         onClick={() => setIsOpen(false)}
                                     >
                                         Contact
@@ -214,7 +220,7 @@ export function Header() {
                                 <li className="mt-8">
                                     <NavLink
                                         to="/login"
-                                        className="flex items-center justify-center gap-2 bg-bio-text-bio-contraste text-[#fdf8e3] font-semibold py-3 px-6 rounded-md w-full"
+                                        className="flex items-center justify-center gap-2 bg-bio-contraste text-bio font-semibold py-3 px-6 rounded-md w-full hover:bg-bio-contraste/90 transition-colors"
                                         onClick={() => setIsOpen(false)}
                                     >
                                         <FaUser />
