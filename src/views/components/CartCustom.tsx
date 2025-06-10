@@ -18,7 +18,7 @@ export function Cart() {
 	const { cart, totalItems, totalPrice } = useCart();
 
 	// Calculer la TVA (20%)
-	const tva = totalPrice * 0.2;
+	const tva = totalPrice * 0.18;
 	const total = totalPrice + tva;
 
 	return (
@@ -77,7 +77,7 @@ export function Cart() {
 								<p>{totalPrice} FCFA</p>
 							</div>
 							<div className="flex justify-between items-center text-sm sm:text-base">
-								<h3 className="font-medium">TVA (20%)</h3>
+								<h3 className="font-medium">TVA (18%)</h3>
 								<p>{tva} FCFA</p>
 							</div>
 							<div className="flex justify-between items-center text-base sm:text-lg font-semibold">

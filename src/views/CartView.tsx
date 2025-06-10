@@ -129,7 +129,7 @@ export function CartView() {
 							price={item.price}
 							imageUrl={item.imageUrl}
 							quantity={item.quantity}
-							className="border-bottom"
+							className="border-bottom pb-4"
 						/>
 					))}
 				</div>

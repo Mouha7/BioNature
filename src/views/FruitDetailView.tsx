@@ -1,5 +1,7 @@
+import { Breadcrumb, BreadcrumbItem, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Fruits } from "@/constants/Fruits";
-import { useParams } from "react-router-dom";
+import { Slash } from "lucide-react";
+import { Link, useParams } from "react-router-dom";
 
 export function FruitDetailView() {
     const { type } = useParams();
@@ -69,6 +71,41 @@ export function FruitDetailView() {
                         {fruitDetails.s01.text}
                     </p>
                 </div>
+            </div>
+
+            {/* Fil d'ariane */}
+            <div className="w-full max-w-7xl px-4 sm:px-6 md:px-8 pt-6">
+                <Breadcrumb>
+                    <BreadcrumbList>
+                        <BreadcrumbItem>
+                            <Link
+                                to="/"
+                                className="text-bio-contraste/70 hover:text-bio-contraste"
+                            >
+                                Accueil
+                            </Link>
+                        </BreadcrumbItem>
+                        <BreadcrumbSeparator>
+                            <Slash className="text-bio-contraste/50" />
+                        </BreadcrumbSeparator>
+                        <BreadcrumbItem>
+                            <Link
+                                to="/fruits"
+                                className="text-bio-contraste/70 hover:text-bio-contraste"
+                            >
+                                Nos fruits
+                            </Link>
+                        </BreadcrumbItem>
+                        <BreadcrumbSeparator>
+                            <Slash className="text-bio-contraste/50" />
+                        </BreadcrumbSeparator>
+                        <BreadcrumbItem>
+                            <BreadcrumbPage className="font-medium text-bio-contraste">
+                                {fruitDetails.s01.title}
+                            </BreadcrumbPage>
+                        </BreadcrumbItem>
+                    </BreadcrumbList>
+                </Breadcrumb>
             </div>
 
             {/* Contenu principal - Sections de fruits */}
