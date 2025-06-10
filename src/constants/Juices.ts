@@ -25,7 +25,7 @@ export const Juices: Juice[] = [
 	{
 		id: "juice-mangue-1",
 		title: "Jus de mangues 100% naturel et bio",
-		prix: "1500 FCFA",
+		prix: "1200 FCFA",
 		imageUrl: "jus_mangue.png",
 		category: ["exotique", "bio"],
 		ingredients: ["mangue"],
@@ -35,7 +35,7 @@ export const Juices: Juice[] = [
 	{
 		id: "juice-ananas-1",
 		title: "Jus d'ananas",
-		prix: "1500 FCFA",
+		prix: "1200 FCFA",
 		imageUrl: "jus_ananas.png",
 		category: ["exotique", "sans-sucre"],
 		ingredients: ["ananas"],
