@@ -5,7 +5,6 @@ import { CardBoxCart } from "./components/CardBox";
 import { Juices } from "../constants/Juices";
 import { useFilter } from "../contexts/FilterContext";
 import { useEffect } from "react";
-import { NavLink } from "react-router-dom";
 
 export function JusView() {
 	const { filterJuices, clearFilters, searchQuery, setSearchQuery } =
@@ -82,25 +81,20 @@ export function JusView() {
 							{filteredJuices.length > 0 ? (
 								<div className="mb-4 grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 md:mb-8 gap-y-5">
 									{filteredJuices.map((juice) => (
-										<NavLink
+										<CardBoxCart
 											key={juice.id}
+											id={juice.id}
+											imageUrl={juice.imageUrl}
+											title={juice.title}
+											prix={juice.prix}
+											category={juice.category}
+											ingredients={juice.ingredients}
+											rating={juice.rating}
+											discount={juice.discount}
+											new={juice.new}
+											popular={juice.popular}
 											to={`/catalogue/produit/${juice.id}`}
-											className="hover:scale-105 transition-transform duration-200"
-										>
-											<CardBoxCart
-												key={juice.id}
-												id={juice.id}
-												imageUrl={juice.imageUrl}
-												title={juice.title}
-												prix={juice.prix}
-												category={juice.category}
-												ingredients={juice.ingredients}
-												rating={juice.rating}
-												discount={juice.discount}
-												new={juice.new}
-												popular={juice.popular}
-											/>
-										</NavLink>
+										/>
 									))}
 								</div>
 							) : (
