@@ -23,7 +23,7 @@ export function JusView() {
 
 	return (
 		<div className="flex flex-col w-full justify-center items-center">
-			<div className="lg-fully-style fully-style bg-cover bg-center bg-[url('/assets/history.png')] bg-no-repeat md:h-[570px] h-[400px] shadow-lg">
+			<div className="lg-fully-style fully-style bg-cover bg-center bg-[url('/assets/banner_produits.jpg')] bg-no-repeat md:h-[570px] h-[400px] shadow-lg">
 				<div className="flex flex-col justify-center gap-3 md:gap-5 h-full bg-black/50 text-white px-4 sm:px-6 md:px-8 lg:px-14 py-2 md:py-3">
 					<h1 className="text-3xl md:text-4xl lg:text-5xl font-black">
 						Découvrez notre gamme de{" "}

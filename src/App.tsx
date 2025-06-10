@@ -9,8 +9,8 @@ function App() {
 		<CartProvider>
 			<FilterProvider>
 				<BrowserRouter>
-					<Router />
 					<ScrollToTop />
+					<Router />
 				</BrowserRouter>
 			</FilterProvider>
 		</CartProvider>

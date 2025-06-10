@@ -14,8 +14,8 @@ export function ContactView() {
 	return (
 		<div className="flex flex-col w-full justify-center items-center">
 			{/* Bannière principale */}
-			<div className="fully-style lg-fully-style bg-cover bg-center bg-[url('/assets/bg-fruits.jpg')] bg-no-repeat md:h-[400px] h-[300px] shadow-lg">
-				<div className="flex flex-col justify-center items-center gap-3 md:gap-5 h-full bg-black/50 text-white p-4 md:p-5">
+			<div className="lg-fully-style fully-style bg-cover bg-center bg-[url('/assets/banner_contactez.jpg')] bg-no-repeat md:h-[570px] h-[400px] shadow-lg">
+				<div className="flex flex-col justify-center items-center gap-3 md:gap-5 h-full bg-black/25 text-white p-4 md:p-5">
 					<h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-center">
 						Contactez-nous
 					</h1>

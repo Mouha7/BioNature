@@ -99,7 +99,6 @@ export function CardCart({
 	const { updateQuantity, removeFromCart } = useCart();
 	const [qte, setQte] = useState(quantity);
 
-	// Met à jour la quantité à la fois localement et dans le contexte
 	const handleQuantityChange = (newQty: number) => {
 		if (newQty >= 1) {
 			setQte(newQty);
@@ -107,17 +106,21 @@ export function CardCart({
 		}
 	};
 
-	// Supprime le produit du panier
 	const handleRemove = () => {
 		removeFromCart(id || "");
 	};
 
+	// Construire correctement le chemin de l'image
+	const imagePath = imageUrl.startsWith("/assets/") 
+		? imageUrl 
+		: `/assets/${imageUrl}`;
+
 	return (
-		<div className={`flex gap-2 sm:gap-3 p-3 sm:p-4 ${className}`}>
+		<div className={`flex gap-2 sm:gap-3 ${className}`}>
 			<div className="w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] flex-shrink-0">
 				<img
 					className="w-full h-full object-contain"
-					src={imageUrl}
+					src={imagePath}
 					alt={name}
 				/>
 			</div>

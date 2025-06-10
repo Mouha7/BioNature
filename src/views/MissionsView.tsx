@@ -1,7 +1,7 @@
 export function MissionsView() {
     return (
         <div className="flex flex-col w-full justify-center items-center">
-            <div className="fully-style lg-fully-style bg-cover bg-center bg-[url('/assets/bg-fruits.jpg')] bg-no-repeat md:h-[570px] h-[400px] shadow-lg">
+            <div className="fully-style lg-fully-style bg-cover bg-center bg-[url('/assets/banner_mission.jpg')] bg-no-repeat md:h-[570px] h-[400px] shadow-lg">
                 <div className="flex flex-col justify-center items-center gap-3 md:gap-5 h-full bg-black/50 text-white p-4 md:p-5">
                     <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-center px-4">
                         L'ADN de BioNature : naturalité & impact local
@@ -14,7 +14,7 @@ export function MissionsView() {
                 <div className="flex flex-col md:flex-row items-center py-6 md:py-12 lg:py-16 w-full">
                     <div className="w-full md:w-1/3 flex justify-center mb-6 md:mb-0">
                         <img
-                            src="/assets/Drapeau-Senegal.webp"
+                            src="/assets/mission_card_1.jpg"
                             alt="Drapeau du Sénégal"
                             loading="lazy"
                             className="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 object-cover rounded-full"
@@ -65,7 +65,7 @@ export function MissionsView() {
                     </div>
                     <div className="w-full md:w-1/3 flex justify-center">
                         <img
-                            src="/assets/Drapeau-Senegal.webp"
+                            src="/assets/mission_card_2.jpg"
                             alt="Article Fruit"
                             loading="lazy"
                             className="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 object-cover rounded-full"

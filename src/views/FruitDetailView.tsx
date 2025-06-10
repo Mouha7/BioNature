@@ -17,6 +17,43 @@ export function FruitDetailView() {
         );
     }
 
+    // Transformer les données de s02 en un format itérable similaire à FruitQualityText
+    const sectionItems = [
+        {
+            img: {
+                src: fruitDetails.s02.s02_1.src,
+                alt: fruitDetails.s02.s02_1.title
+            },
+            section: {
+                title: fruitDetails.s02.s02_1.title,
+                text: [fruitDetails.s02.s02_1.text],
+                className: "w-full lg:w-1/2 lg:pl-6 xl:pl-12 space-y-3 sm:space-y-4 md:space-y-6"
+            }
+        },
+        {
+            img: {
+                src: fruitDetails.s02.s02_2.src,
+                alt: fruitDetails.s02.s02_2.title
+            },
+            section: {
+                title: fruitDetails.s02.s02_2.title,
+                text: [fruitDetails.s02.s02_2.text],
+                className: "w-full lg:w-1/2 lg:pr-6 xl:pr-12 space-y-3 sm:space-y-4 md:space-y-6"
+            }
+        },
+        {
+            img: {
+                src: fruitDetails.s02.s02_3.src,
+                alt: fruitDetails.s02.s02_3.title
+            },
+            section: {
+                title: fruitDetails.s02.s02_3.title,
+                text: [fruitDetails.s02.s02_3.text],
+                className: "w-full lg:w-1/2 lg:pl-6 xl:pl-12 space-y-3 sm:space-y-4 md:space-y-6"
+            }
+        }
+    ];
+
     return (
         <div className="flex flex-col w-full justify-center items-center">
             {/* Bannière avec image de fond responsive */}
@@ -40,65 +77,67 @@ export function FruitDetailView() {
                     {fruitDetails.s02.title}
                 </h2>
 
-                {/* Section 1 - Alterné sur mobile, côte à côte sur desktop */}
-                <div className="flex flex-col lg:flex-row items-center py-4 sm:py-6 md:py-8 lg:py-12 xl:py-16 border-b border-bio-contraste/10">
-                    <div className="w-full lg:w-1/2 lg:pr-6 xl:pr-12 mb-4 lg:mb-0">
-                        <img
-                            src={fruitDetails.s02.s02_1.src}
-                            alt={fruitDetails.s02.s02_1.title}
-                            loading="lazy"
-                            className="w-full h-auto rounded-lg shadow-md object-cover"
-                        />
-                    </div>
-                    <div className="w-full lg:w-1/2 lg:pl-6 xl:pl-12 space-y-3 sm:space-y-4 md:space-y-6">
-                        <h3 className="text-lg sm:text-xl md:text-2xl font-bold uppercase text-bio-contraste">
-                            {fruitDetails.s02.s02_1.title}
-                        </h3>
-                        <p className="text-sm sm:text-base md:text-lg text-bio-contraste/90">
-                            {fruitDetails.s02.s02_1.text}
-                        </p>
-                    </div>
-                </div>
-
-                {/* Section 2 - Inverser l'ordre sur desktop */}
-                <div className="flex flex-col lg:flex-row-reverse items-center py-4 sm:py-6 md:py-8 lg:py-12 xl:py-16 border-b border-bio-contraste/10">
-                    <div className="w-full lg:w-1/2 lg:pl-6 xl:pl-12 mb-4 lg:mb-0">
-                        <img
-                            src={fruitDetails.s02.s02_2.src}
-                            alt={fruitDetails.s02.s02_2.title}
-                            loading="lazy"
-                            className="w-full h-auto rounded-lg shadow-md object-cover"
-                        />
-                    </div>
-                    <div className="w-full lg:w-1/2 lg:pr-6 xl:pr-12 space-y-3 sm:space-y-4 md:space-y-6">
-                        <h3 className="text-lg sm:text-xl md:text-2xl font-bold uppercase text-bio-contraste">
-                            {fruitDetails.s02.s02_2.title}
-                        </h3>
-                        <p className="text-sm sm:text-base md:text-lg text-bio-contraste/90">
-                            {fruitDetails.s02.s02_2.text}
-                        </p>
-                    </div>
-                </div>
-
-                {/* Section 3 */}
-                <div className="flex flex-col lg:flex-row items-center py-4 sm:py-6 md:py-8 lg:py-12 xl:py-16 border-b border-bio-contraste/10">
-                    <div className="w-full lg:w-1/2 lg:pr-6 xl:pr-12 mb-4 lg:mb-0">
-                        <img
-                            src={fruitDetails.s02.s02_3.src}
-                            alt={fruitDetails.s02.s02_3.title}
-                            loading="lazy"
-                            className="w-full h-auto rounded-lg shadow-md object-cover"
-                        />
-                    </div>
-                    <div className="w-full lg:w-1/2 lg:pl-6 xl:pl-12 space-y-3 sm:space-y-4 md:space-y-6">
-                        <h3 className="text-lg sm:text-xl md:text-2xl font-bold uppercase text-bio-contraste">
-                            {fruitDetails.s02.s02_3.title}
-                        </h3>
-                        <p className="text-sm sm:text-base md:text-lg text-bio-contraste/90">
-                            {fruitDetails.s02.s02_3.text}
-                        </p>
-                    </div>
-                </div>
+                {/* Générer dynamiquement les sections comme dans FruitView.tsx */}
+                {sectionItems.map((item, index) => {
+                    const isLastItem = index === sectionItems.length - 1;
+                    const borderClass = isLastItem ? "" : "border-b border-bio-contraste/10";
+                    
+                    return index % 2 === 0 ? (
+                        <div
+                            key={`section-${index}`}
+                            className={`flex lg:flex-row flex-col md:items-center md:py-16 py-5 ${borderClass} gap-4 sm:gap-6 lg:gap-10`}
+                        >
+                            <div className="w-full lg:w-1/2 lg:pr-6 xl:pr-12 mb-4 lg:mb-0">
+                                <img
+                                    src={item.img.src}
+                                    alt={item.img.alt}
+                                    loading="lazy"
+                                    className="w-full h-auto aspect-[4/3] rounded-lg shadow-md object-cover"
+                                />
+                            </div>
+                            <div className={item.section.className}>
+                                <h3 className="text-lg sm:text-xl md:text-2xl font-bold uppercase text-bio-contraste">
+                                    {item.section.title}
+                                </h3>
+                                {item.section.text.map((text, textIndex) => (
+                                    <p 
+                                        key={`section-${index}-text-${textIndex}`}
+                                        className="text-sm sm:text-base md:text-lg text-bio-contraste/90"
+                                    >
+                                        {text}
+                                    </p>
+                                ))}
+                            </div>
+                        </div>
+                    ) : (
+                        <div
+                            key={`section-${index}`}
+                            className={`flex lg:flex-row-reverse flex-col md:items-center md:py-16 py-5 ${borderClass} gap-4 sm:gap-6 lg:gap-10`}
+                        >
+                            <div className="w-full lg:w-1/2 lg:pl-6 xl:pl-12 mb-4 lg:mb-0">
+                                <img
+                                    src={item.img.src}
+                                    alt={item.img.alt}
+                                    loading="lazy"
+                                    className="w-full h-auto aspect-[4/3] rounded-lg shadow-md object-cover"
+                                />
+                            </div>
+                            <div className={item.section.className}>
+                                <h3 className="text-lg sm:text-xl md:text-2xl font-bold uppercase text-bio-contraste">
+                                    {item.section.title}
+                                </h3>
+                                {item.section.text.map((text, textIndex) => (
+                                    <p 
+                                        key={`section-${index}-text-${textIndex}`}
+                                        className="text-sm sm:text-base md:text-lg text-bio-contraste/90"
+                                    >
+                                        {text}
+                                    </p>
+                                ))}
+                            </div>
+                        </div>
+                    )
+                })}
             </div>
         </div>
     );

@@ -15,7 +15,7 @@ export const Histoires = {
     },
     2: {
         img: {
-            src: "/assets/Drapeau-Senegal.webp",
+            src: "/assets/history_2.jpg",
             alt: "Drapeau du Sénégal",
         },
         section: {
@@ -29,7 +29,7 @@ export const Histoires = {
     },
     3: {
         img: {
-            src: "/assets/Drapeau-Senegal.webp",
+            src: "/assets/history_3.jpg",
             alt: "Article Fruit",
         },
         section: {
@@ -43,7 +43,7 @@ export const Histoires = {
     },
     4: {
         img: {
-            src: "/assets/Drapeau-Senegal.webp",
+            src: "/assets/history_4.jpg",
             alt: "Article Fruit",
         },
         section: {

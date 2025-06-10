@@ -31,7 +31,7 @@ export function HistoireView() {
 										src={history.img.src}
 										alt={history.img.alt}
 										loading="lazy"
-										className="object-cover w-full h-auto rounded-lg shadow-md"
+										className="w-full h-auto aspect-[4/3] rounded-lg shadow-md object-cover"
 									/>
 								</div>
 								<div
@@ -60,7 +60,7 @@ export function HistoireView() {
 										src={history.img.src}
 										alt={history.img.alt}
 										loading="lazy"
-										className="object-cover w-full h-auto rounded-lg shadow-md"
+										className="w-full h-auto aspect-[4/3] rounded-lg shadow-md object-cover"
 									/>
 								</div>
 								<div

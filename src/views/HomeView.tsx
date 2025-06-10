@@ -113,64 +113,110 @@ export function HomeView() {
                     {/* Produit 1 */}
                     <Link 
                         to="/catalogue/produit/juice-orange-1" 
-                        className="rounded-lg shadow-sm p-4 sm:p-3 md:p-4 transition-transform hover:scale-[1.02] duration-200"
+                        className="rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden border border-bio-contraste/10"
                     >
-                        <div className="relative pb-3 sm:pb-4">
-                            <span className="absolute top-0 left-0 m-2 bg-amber-400 text-white text-center py-1 px-3 text-xs sm:text-sm rounded-md">
-                                Épuisé
+                        <div className="relative">
+                            <div className="absolute top-3 left-3 z-10">
+                                <span className="bg-amber-500 text-white text-xs font-semibold px-2.5 py-1 rounded-md">
+                                    À CONSOMMER RAPIDEMENT
+                                </span>
+                            </div>
+                            
+                            {/* Badge de réduction */}
+                            <span className="absolute top-3 right-3 z-10 bg-[#66441b] text-[#fdf8e3] text-xs font-semibold px-2.5 py-1 rounded-md">
+                                -33%
                             </span>
-                            <div className="h-36 sm:h-40 md:h-44 flex items-center justify-center">
+                            
+                            {/* Image du produit */}
+                            <div className="h-48 sm:h-52 md:h-56 flex items-center justify-center p-4">
                                 <img
-                                    className="object-contain h-full"
+                                    className="max-h-full object-contain transition-transform duration-300 hover:scale-105"
                                     src="/assets/Orange.png"
                                     alt="Orange Juice"
                                 />
                             </div>
                         </div>
-                        <div>
-                            <p className="font-bold text-sm sm:text-base md:text-lg mb-1">
-                                Jus d'orange pressée - DLC 28/05/25
+                        
+                        {/* Informations du produit */}
+                        <div className="p-4">
+                            <div className="flex flex-wrap gap-1.5 mb-2">
+                                <span className="text-xs font-medium text-bio-contraste/80 bg-bio-contraste/10 px-2 py-0.5 rounded-full">
+                                    Jus
+                                </span>
+                                <span className="text-xs font-medium text-bio-contraste/80 bg-bio-contraste/10 px-2 py-0.5 rounded-full">
+                                    Orange
+                                </span>
+                            </div>
+                            
+                            <h3 className="text-lg font-semibold text-bio-contraste line-clamp-2 mb-2">
+                                Jus d'orange pressée
+                            </h3>
+                            
+                            <p className="text-amber-500 text-xs font-medium mb-2">
+                                DLC : 28/05/25
                             </p>
-                            <p>
-                                <span className="font-light line-through text-xs sm:text-sm">
+                            
+                            <div className="flex items-end gap-2">
+                                <span className="text-sm line-through text-bio-contraste/70">
                                     1500 FCFA
-                                </span>{" "}
-                                <span className="text-amber-400 font-bold text-sm sm:text-base">
+                                </span>
+                                <span className="text-xl font-bold text-bio-contraste">
                                     1000 FCFA
                                 </span>
-                            </p>
+                            </div>
                         </div>
                     </Link>
                     
                     {/* Produit 2 */}
                     <Link 
-                        to="/catalogue/produit/jus-orange-1" 
-                        className="rounded-lg shadow-sm p-4 sm:p-3 md:p-4 transition-transform hover:scale-[1.02] duration-200"
+                        to="catalogue/produit/juice-ananas-1" 
+                        className="rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden border border-bio-contraste/10"
                     >
-                        <div className="relative pb-3 sm:pb-4">
-                            <span className="absolute top-0 left-0 m-2 bg-amber-400 text-white text-center py-1 px-3 text-xs sm:text-sm rounded-md">
-                                Disponible
+                        <div className="relative">
+                            <div className="absolute top-3 left-3 z-10">
+                                <span className="bg-red-500 text-white text-xs font-semibold px-2.5 py-1 rounded-md">
+                                    SOLDES
+                                </span>
+                            </div>
+                            
+                            {/* Badge de réduction */}
+                            <span className="absolute top-3 right-3 z-10 bg-[#66441b] text-[#fdf8e3] text-xs font-semibold px-2.5 py-1 rounded-md">
+                                -25%
                             </span>
-                            <div className="h-36 sm:h-40 md:h-44 flex items-center justify-center">
+                            
+                            {/* Image du produit */}
+                            <div className="h-48 sm:h-52 md:h-56 flex items-center justify-center p-4">
                                 <img
-                                    className="object-contain h-full"
-                                    src="/assets/Orange.png"
-                                    alt="Orange Juice"
+                                    className="max-h-full object-contain transition-transform duration-300 hover:scale-105"
+                                    src="/assets/jus_ananas.png"
+                                    alt="Ananas Juice"
                                 />
                             </div>
                         </div>
-                        <div>
-                            <p className="font-bold text-sm sm:text-base md:text-lg mb-1">
-                                Jus d'orange pressée - DLC 28/05/25
-                            </p>
-                            <p>
-                                <span className="font-light line-through text-xs sm:text-sm">
-                                    1500 FCFA
-                                </span>{" "}
-                                <span className="text-amber-400 font-bold text-sm sm:text-base">
-                                    1000 FCFA
+                        
+                        {/* Informations du produit */}
+                        <div className="p-4">
+                            <div className="flex flex-wrap gap-1.5 mb-2">
+                                <span className="text-xs font-medium text-bio-contraste/80 bg-bio-contraste/10 px-2 py-0.5 rounded-full">
+                                    Jus
                                 </span>
-                            </p>
+                                <span className="text-xs font-medium text-bio-contraste/80 bg-bio-contraste/10 px-2 py-0.5 rounded-full">
+                                    Ananas
+                                </span>
+                            </div>
+                            
+                            <h3 className="text-lg font-semibold text-bio-contraste line-clamp-2 mb-2">
+                                Jus d'ananas bio
+                            </h3>
+                            
+                            <div className="flex items-end gap-2">
+                                <span className="text-sm line-through text-bio-contraste/70">
+                                    1500 FCFA
+                                </span>
+                                <span className="text-xl font-bold text-bio-contraste">
+                                    1125 FCFA
+                                </span>
+                            </div>
                         </div>
                     </Link>
                 </div>
