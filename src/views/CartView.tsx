@@ -23,10 +23,13 @@ export function CartView() {
 	const [isCheckoutComplete, setIsCheckoutComplete] = useState(false);
 	const [customerEmail, setCustomerEmail] = useState("");
 	const [customerName, setCustomerName] = useState("");
+	// Nouvel état pour le type de livraison
+	const [deliveryType, setDeliveryType] = useState("domicile");
 
 	// Calculs des montants
-	const tva = totalPrice * 0.2;
-	const fraisLivraison = 2000;
+	const tva = totalPrice * 0.18; // TVA à 18%
+	// Frais de livraison dynamiques selon le choix
+	const fraisLivraison = deliveryType === "domicile" ? 2500 : 1500;
 	const totalTTC = totalPrice + tva + fraisLivraison;
 
 	// Si le panier est vide, rediriger vers la page des produits
@@ -39,13 +42,16 @@ export function CartView() {
 		return (
 			<div className="flex flex-col items-center justify-center min-h-[60vh] w-full px-4 sm:px-6 md:px-8 py-8">
 				<div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded max-w-md w-full mb-6">
-					<p className="font-bold text-center">Commande confirmée !</p>
+					<p className="font-bold text-center">
+						Commande confirmée !
+					</p>
 					<p className="text-center">
 						Un email de confirmation a été envoyé à {customerEmail}
 					</p>
 				</div>
 				<p className="mb-6">
-					Merci pour votre commande. Votre commande a été traitée avec succès.
+					Merci pour votre commande. Votre commande a été traitée avec
+					succès.
 				</p>
 				<Link
 					to="/catalogue/gamme-jus"
@@ -145,7 +151,9 @@ export function CartView() {
 								placeholder="Nom et Prénom"
 								className="border border-bio-contraste/30 p-2 rounded-md"
 								value={customerName}
-								onChange={(e) => setCustomerName(e.target.value)}
+								onChange={(e) =>
+									setCustomerName(e.target.value)
+								}
 								required
 							/>
 							<input
@@ -153,7 +161,9 @@ export function CartView() {
 								placeholder="Email"
 								className="border border-bio-contraste/30 p-2 rounded-md"
 								value={customerEmail}
-								onChange={(e) => setCustomerEmail(e.target.value)}
+								onChange={(e) =>
+									setCustomerEmail(e.target.value)
+								}
 								required
 							/>
 							<input
@@ -167,13 +177,15 @@ export function CartView() {
 				</div>
 
 				<div className="flex justify-between items-end gap-2.5">
-					<div className="flex flex-col">
+					<div className="flex flex-col w-full">
 						<h2 className="text-xl mb-2.5 font-bold">
 							2. Détails de livraison
 						</h2>
 						<RadioGroup
 							className="flex flex-col gap-2.5"
 							defaultValue="domicile"
+							value={deliveryType}
+							onValueChange={setDeliveryType}
 						>
 							<div className="flex items-center space-x-2 cursor-pointer">
 								<RadioGroupItem
@@ -184,7 +196,7 @@ export function CartView() {
 								<Label htmlFor="r1" className="cursor-pointer">
 									Livraison à domicile{" "}
 									<span className="text-sm font-light">
-										(à partir 3500 FCFA)
+										(2500 FCFA)
 									</span>
 								</Label>
 							</div>
@@ -197,7 +209,7 @@ export function CartView() {
 								<Label htmlFor="r2" className="cursor-pointer">
 									Point de relais{" "}
 									<span className="text-sm font-light">
-										(à partir 1500 FCFA)
+										(1500 FCFA)
 									</span>
 								</Label>
 							</div>
@@ -214,7 +226,7 @@ export function CartView() {
 						<p>{totalPrice} FCFA</p>
 					</div>
 					<div className="flex justify-between items-center">
-						<h3 className="font-bold">TVA (20%)</h3>
+						<h3 className="font-bold">TVA (18%)</h3>
 						<p>{tva} FCFA</p>
 					</div>
 					<div className="flex justify-between items-center">
