@@ -1,54 +1,205 @@
-# React + TypeScript + Vite
+# 🌿 BioNature - E-commerce de Fruits Tropicaux Bio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![React](https://img.shields.io/badge/React-18.0+-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Vite](https://img.shields.io/badge/Vite-5.0+-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.0+-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![React Router](https://img.shields.io/badge/React_Router-6.0+-CA4245?style=for-the-badge&logo=reactrouter&logoColor=white)](https://reactrouter.com/)
 
-Currently, two official plugins are available:
+[![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
+[![Build Status](https://img.shields.io/badge/Build-Passing-brightgreen?style=for-the-badge)](https://github.com/votre-username/bionature)
+[![Deployment](https://img.shields.io/badge/Deployment-Vercel-black?style=for-the-badge&logo=vercel)](https://bionature-demo.vercel.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📋 Description
 
-## Expanding the ESLint configuration
+**BioNature** est une plateforme e-commerce moderne dédiée à la vente de fruits tropicaux biologiques et de jus naturels du Sénégal. L'application met en avant l'authenticité, la durabilité et l'impact positif sur les communautés locales sénégalaises.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### ✨ Fonctionnalités Principales
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- 🛒 **Catalogue de produits** avec système de filtrage avancé
+- 🔍 **Recherche dynamique** et tri des produits
+- 🛍️ **Panier d'achat interactif** avec gestion des quantités
+- 👤 **Authentification utilisateur** (connexion/inscription)
+- 📧 **Notifications email** via EmailJS pour les confirmations de commande
+- 📱 **Design responsive** optimisé pour tous les appareils
+- 🎨 **Interface moderne** avec Tailwind CSS
+- 🔒 **Récupération de mot de passe** sécurisée
+- 📄 **Pages institutionnelles** (Histoire, Missions, Engagements)
+- 📚 **Information détaillée** sur les fruits tropicaux
+
+## 🚀 Technologies Utilisées
+
+### Frontend
+
+- **React 18** - Bibliothèque UI moderne
+- **TypeScript** - Typage statique pour plus de robustesse
+- **Vite** - Outil de build ultra-rapide
+- **React Router DOM** - Navigation côté client
+- **Tailwind CSS** - Framework CSS utilitaire
+
+### Services & Intégrations
+
+- **EmailJS** - Service d'envoi d'emails
+- **Shadcn/ui** - Composants UI réutilisables
+- **Lucide React** - Icônes modernes
+
+### Outils de Développement
+
+- **ESLint** - Linting du code
+- **PostCSS** - Traitement CSS
+- **Autoprefixer** - Préfixes CSS automatiques
+
+## 📁 Structure du Projet
+
+```
+src/
+├── components/           # Composants réutilisables
+├── constants/           # Données statiques (fruits, jus, histoire)
+├── views/              # Pages principales
+│   ├── components/     # Composants spécifiques aux vues
+│   ├── HomeView.tsx    # Page d'accueil
+│   ├── JusView.tsx     # Catalogue des produits
+│   ├── CartView.tsx    # Panier d'achat
+│   ├── LoginView.tsx   # Authentification
+│   └── ...
+├── assets/             # Images et ressources statiques
+└── styles/             # Fichiers CSS
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🛠️ Installation et Configuration
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Prérequis
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+- **Node.js** (version 16 ou supérieure)
+- **npm** ou **yarn**
+
+### Installation
+
+1. **Cloner le repository**
+
+```bash
+git clone https://github.com/votre-username/bionature.git
+cd bionature
 ```
+
+2. **Installer les dépendances**
+
+```bash
+npm install
+# ou
+yarn install
+```
+
+3. **Configuration EmailJS**
+
+Créez un fichier `.env` à la racine du projet :
+
+```env
+VITE_EMAILJS_SERVICE_ID=votre_service_id
+VITE_EMAILJS_TEMPLATE_ID=votre_template_id
+VITE_EMAILJS_PUBLIC_KEY=votre_public_key
+```
+
+4. **Lancer le serveur de développement**
+
+```bash
+npm run dev
+# ou
+yarn dev
+```
+
+L'application sera accessible sur `http://localhost:5173`
+
+## 🏗️ Scripts Disponibles
+
+```bash
+# Développement
+npm run dev          # Lance le serveur de développement
+
+# Build
+npm run build        # Compile l'application pour la production
+npm run preview      # Prévisualise le build de production
+
+# Linting
+npm run lint         # Vérifie le code avec ESLint
+```
+
+## 🎨 Design System
+
+### Palette de Couleurs
+
+- **Primaire** : `#fefae0` (bio)
+- **Contraste** : `#543515` (bio-contraste)
+- **Accents** : Nuances naturelles et organiques
+
+### Typographie
+
+- **Police principale** : Roboto (Google Fonts)
+- **Hiérarchie** : Système de tailles responsive
+
+## 📱 Responsive Design
+
+L'application est entièrement responsive avec des points de rupture optimisés :
+
+- **Mobile** : < 768px
+- **Tablette** : 768px - 1024px
+- **Desktop** : > 1024px
+
+## 🚀 Déploiement
+
+### Vercel (Recommandé)
+
+1. Push votre code sur GitHub
+2. Connectez votre repository à Vercel
+3. Ajoutez vos variables d'environnement
+4. Déployez automatiquement
+
+### Build Manual
+
+```bash
+npm run build
+# Les fichiers de production sont dans le dossier `dist/`
+```
+
+## 🌍 Fonctionnalités Régionales
+
+- **Localisation Sénégal** - Contenu adapté au marché sénégalais
+- **Monnaie FCFA** - Prix affichés en Francs CFA
+- **Fruits locaux** - Mangue, ananas, bissap, citron, etc.
+- **Producteurs locaux** - Mise en avant des partenaires sénégalais
+
+## 🤝 Contribution
+
+Les contributions sont les bienvenues ! Pour contribuer :
+
+1. Fork le projet
+2. Créez une branche feature (`git checkout -b feature/AmazingFeature`)
+3. Commit vos changements (`git commit -m 'Add some AmazingFeature'`)
+4. Push vers la branche (`git push origin feature/AmazingFeature`)
+5. Ouvrez une Pull Request
+
+## 📄 Licence
+
+Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
+
+## 📞 Contact
+
+**BioNature Team**
+
+- 📧 Email : <bionature@gmail.com>
+- 📱 Téléphone : (221) 77 000 00 00
+- 🌐 Site web : [bionature-demo.vercel.app](https://bionature-demo.vercel.app)
+
+## 🙏 Remerciements
+
+- Communauté React pour les outils exceptionnels
+- Producteurs sénégalais partenaires
+- Équipe de développement SMRS
+
+---
+
+<div align="center">
+  <img src="/assets/logo.png" alt="BioNature Logo" width="100"/>
+  <br>
+  *🌿 Naturellement Sénégalais, Naturellement Bio 🌿*
+</div>
