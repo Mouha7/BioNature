@@ -186,9 +186,9 @@ Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de 
 
 **BioNature Team**
 
-- 📧 Email : <bionature@gmail.com>
-- 📱 Téléphone : (221) 77 000 00 00
-- 🌐 Site web : [bionature-demo.vercel.app](https://bionature-demo.vercel.app)
+- 📧 Email : <seydina.mrs@gmail.com>
+- 📱 Téléphone : (221) 78 459 05 36
+- 🌐 Site web : [bionature-demo.vercel.app](https://bio-nature.vercel.app)
 
 ## 🙏 Remerciements
 
