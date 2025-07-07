@@ -188,7 +188,7 @@ Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de 
 
 - 📧 Email : <seydina.mrs@gmail.com>
 - 📱 Téléphone : (221) 78 459 05 36
-- 🌐 Site web : [bionature-demo.vercel.app](https://bio-nature.vercel.app)
+- 🌐 Site web : [bio-nature.vercel.app](https://bio-nature.vercel.app)
 
 ## 🙏 Remerciements
 
